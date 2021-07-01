@@ -3,8 +3,9 @@ totalWorkHr=0
 empWagePerHr=20
 days=1
 
-for((i=1;i<=20;i++))
-do
+function cal-TotalworkHr() {
+ for((i=1;i<=20;i++))
+ do
   range=$((2-0+1))
   empCheck=$(($(($RANDOM%$range))+0))
   case $empCheck in
@@ -17,14 +18,15 @@ do
    2)
       totalWorkHr=$(($totalWorkHr+8))
    ;;
-   *)
-      echo "wrong input"
-   ;;
   esac
   ((days=$days+1))
   if (( $totalWorkHr >=100 ))
   then
      break;
   fi
-done
-echo "Employee total wage for a month is :$(($empWagePerHr*$totalWorkHr))"
+ done
+ echo $totalWorkHr
+}
+getTotalWorkHr=$( cal-TotalworkHr )
+echo "value : $getTotalWorkHr"
+echo "Employee total wage for a month is :$(($empWagePerHr*$getTotalWorkHr))"
