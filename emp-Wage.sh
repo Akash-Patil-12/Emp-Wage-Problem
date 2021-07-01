@@ -1,7 +1,9 @@
 #!/bin/bash -x
 totalWorkHr=0
 empWagePerHr=20
-for ((i=1;i<=20;i++))
+days=1
+
+for((i=1;i<=20;i++))
 do
   range=$((2-0+1))
   empCheck=$(($(($RANDOM%$range))+0))
@@ -19,5 +21,10 @@ do
       echo "wrong input"
    ;;
   esac
+  ((days=$days+1))
+  if (( $totalWorkHr >=100 ))
+  then
+     break;
+  fi
 done
 echo "Employee total wage for a month is :$(($empWagePerHr*$totalWorkHr))"
