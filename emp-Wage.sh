@@ -34,7 +34,8 @@ function cal-TotalworkHr()  {
 cal-TotalworkHr 
 for ((j=0;j<${#dailyWage[@]};j++))
 {
-echo "Day $(($j+1)) Wage :" ${dailyWage[j]}
+echo "Day :" $(($j+1))
+echo "Day Wage :" ${dailyWage[j]}
 echo "Total Wage :" ${totalWage[$j]}
 
 }
