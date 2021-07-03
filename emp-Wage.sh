@@ -38,4 +38,4 @@ echo "Day $(($j+1)) Wage :" ${dailyWage[j]}
 echo "Total Wage :" ${totalWage[$j]}
 
 }
-echo "Employee total wage for a month is :$(($empWagePerHr*$totalWorkHr))"
+
